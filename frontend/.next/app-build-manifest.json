@@ -40,6 +40,16 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/labour/page.js"
+    ],
+    "/crop-health/pest/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/crop-health/pest/page.js"
+    ],
+    "/crop-health/irrigation/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/crop-health/irrigation/page.js"
     ]
   }
 }
