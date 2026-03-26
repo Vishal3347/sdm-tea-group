@@ -1,13 +1,14 @@
 import axios from 'axios';
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL;
+const API = `${process.env.NEXT_PUBLIC_API_URL}/api`;
 
 const api = axios.create({
-  baseURL: API_URL,
+  baseURL: API,
   headers: { 'Content-Type': 'application/json' },
+  withCredentials: true,
 });
 
-// Attach JWT token to every request
+// Attach JWT token
 api.interceptors.request.use((config) => {
   if (typeof window !== 'undefined') {
     const token = localStorage.getItem('sdm_token');
@@ -16,7 +17,7 @@ api.interceptors.request.use((config) => {
   return config;
 });
 
-// Handle 401 globally
+// Handle 401
 api.interceptors.response.use(
   (response) => response,
   (error) => {
